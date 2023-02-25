@@ -4,23 +4,26 @@
 <meta charset="utf-8">
 <title>Pseudo Class Selectors</title>
 <style>
+h1 {
+  background-color: aquamarine;
+}
 /* Styles go here. */
 header li {
   list-style: none;
 }
 a:link, a:visited {
   text-decoration: none;
-  background-color: green;
-  border: 1px solid blue;
-  color: black;
+  background-color: black;
+  border: 2px solid yellowgreen;
+  color: white;
   display: block;
   width: 200px;
   text-align: center;
-  margin-bottom: 1px;
+  margin-bottom: 10px;
 }
 
 a:hover, a:active {
-  background-color: red;
+  background-color: green;
   color: purple;
 }
 
@@ -34,6 +37,11 @@ section div:nth-child(odd) {
 
 section div:nth-child(4):hover {
   background-color: green;
+  cursor: pointer;
+}
+
+section div:nth-child(5):active {
+  background-color: black;
   cursor: pointer;
 }
 
