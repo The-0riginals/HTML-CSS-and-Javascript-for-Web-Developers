@@ -45,3 +45,17 @@ h1 {
 
 </body>
 </html>
+<!-- 
+  -giải quyết vấn đề về padding và border, tràn ra ngoài box cho element có thuộc tính display là block
+  Box model được nâng cấp (rất lâu rồi) với thuộc tính box-sizing, 2 value chính là: content-box và border-box
+
+content-box: tất cả element đều được gán mặc định là content-box, và cũng là những gì mình phân tích ở trên. Lưu ý lại, thuộc tính width và height là để định nghĩa chiều rộng/cao của phần content mà thôi nhé.
+border-box: thuộc tính width và height sẽ tự động bao gồm luôn content, padding và border, còn chiều rộng của content sẽ tự động co giãn tương ứng nếu chúng ta thay đổi padding và border, đảm bảo kích thước của cả element sẽ không thay đổi, đồng nghĩa với việc layout tổng sẽ không thay đổi.
+Trang web có cả nghìn element, liệu việc thêm thuộc tính box-sizing vào từng element có khả thi?
+
+Tất nhiên là chúng ta sẽ không phải thêm thủ công vào từng element, với sự giúp đỡ của Universal selector *, chúng ta chỉ cần một dòng CSS đơn giản:
+
+* {
+  box-sizing: border-box;
+} 
+-->

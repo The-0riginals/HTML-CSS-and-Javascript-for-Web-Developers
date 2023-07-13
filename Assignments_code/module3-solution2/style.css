@@ -1,0 +1,73 @@
+.container-fluid{
+ margin: 0px;
+ padding: 0px;
+}
+
+.navbar{
+    background-color: gray;
+    border: 2px solid black ;
+    border-radius: 5px;
+
+}
+
+.navbar-brand{
+    font-size: 35px;
+    color: black;
+    padding-left: 50px;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+.navbar-nav{
+    text-align: center;
+    /* border-color: black;
+    border-radius: 5px;
+    color: black; */
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-toggle{
+    border: 2px solid black;
+    margin-right: 50px;
+}
+.icon-bar{
+    background-color: black;
+}
+.menu-item{
+    color: black;
+    width: 100%;
+    border-top: black 2px solid;
+    background-color: white;
+   
+    
+}
+.row{
+	margin: 20px;
+}
+
+.main-title{
+    text-align: center;
+    font-weight: bold;
+    color: green;
+    font-size: 50px;
+}
+.content-box{
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.item-name{
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+}
+.item-description{
+    text-align: center;
+    color: black;
+}

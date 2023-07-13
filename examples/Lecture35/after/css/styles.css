@@ -88,7 +88,7 @@ body {
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
 }
-
+/*lecture 35*/
 #menu-tile, #specials-tile, #map-tile {
   height: 250px;
   width: 100%;
@@ -110,6 +110,7 @@ body {
   background-position: center;
 }
 
+/* text in tile */
 #menu-tile span, #specials-tile span, #map-tile span {
   position: absolute;
   bottom: 0;
@@ -120,7 +121,7 @@ body {
   text-transform: uppercase;
   background-color: #000;
   color: #fff;
-  opacity: .8;
+  opacity: 0.8; /* tạo độ trong suốt cho background */
 }
 
 /* END HOME PAGE */
