@@ -24,11 +24,16 @@ $(function () {
   var dc = {};
 
   var homeHtml = "snippets/home-snippet.html";
+
+  //-code for lecture 61------------------------------------------------------
   var allCategoriesUrl =
     "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
   var categoriesTitleHtml = "snippets/categories-title-snippet.html";
   var categoryHtml = "snippets/category-snippet.html";
 
+  //----------------------------------------------------------------------------------
+
+  
   // Convenience function for inserting innerHTML for 'select'
   var insertHtml = function (selector, html) {
     var targetElem = document.querySelector(selector);
@@ -47,6 +52,7 @@ $(function () {
   var insertProperty = function (string, propName, propValue) {
     var propToReplace = "{{" + propName + "}}";
     string = string.replace(new RegExp(propToReplace, "g"), propValue);
+    //ex: string = "hello {{name}}", propName = "name", propValue = "John", string = "hello John"
     return string;
   };
 
@@ -63,41 +69,48 @@ $(function () {
     );
   });
 
+
+  //----------------------------------------------------------------------------------
+  // code for lecture 61 : loading categories view
+
   // Load the menu categories view
   dc.loadMenuCategories = function () {
     showLoading("#main-content");
-    $ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowCategoriesHTML);
+
+    //allCategoriesUrl is the url of the json file
+    $ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowCategoriesHTML);   
   };
 
-  // Builds HTML for the categories page based on the data
-  // from the server
-  function buildAndShowCategoriesHTML(categories) {
+  // Builds HTML for the categories page based on the data from the server
+  function buildAndShowCategoriesHTML(categories) {      //categories is object converted from json string
+
     // Load title snippet of categories page
     $ajaxUtils.sendGetRequest(
       categoriesTitleHtml,
       function (categoriesTitleHtml) {
+
         // Retrieve single category snippet
         $ajaxUtils.sendGetRequest(
           categoryHtml,
           function (categoryHtml) {
             var categoriesViewHtml = buildCategoriesViewHtml(
-              categories,
+              categories,  
               categoriesTitleHtml,
               categoryHtml
             );
-            insertHtml("#main-content", categoriesViewHtml);
+            insertHtml("#main-content", categoriesViewHtml); //inserts the html into the main-content div
           },
           false
         );
       },
-      false
+      false // False here because we are getting just regular HTML from the server, so no need to process JSON.
     );
   }
 
   // Using categories data and snippets html
   // build categories view HTML to be inserted into page
   function buildCategoriesViewHtml(
-    categories,
+    categories,   // line 84
     categoriesTitleHtml,
     categoryHtml
   ) {
@@ -121,3 +134,7 @@ $(function () {
 
   global.$dc = dc;
 })(window);
+
+
+
+//checked

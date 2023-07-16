@@ -1,3 +1,5 @@
+//use ajax to get data from server , this code is nothing different from the previous one in lecture 58
+
 (function (global) {
 
 // Set up a namespace for our utility

@@ -28,10 +28,13 @@ $(function () {
     "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
   var categoriesTitleHtml = "snippets/categories-title-snippet.html";
   var categoryHtml = "snippets/category-snippet.html";
+  
+  // lecture 62 code------------------------------------------------
   var menuItemsUrl =
     "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/";
   var menuItemsTitleHtml = "snippets/menu-items-title.html";
   var menuItemHtml = "snippets/menu-item.html";
+  // -----------------------------------------------------
 
   // Convenience function for inserting innerHTML for 'select'
   var insertHtml = function (selector, html) {
@@ -78,8 +81,8 @@ $(function () {
   dc.loadMenuItems = function (categoryShort) {
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
-      menuItemsUrl + categoryShort + ".json",
-      buildAndShowMenuItemsHTML
+      menuItemsUrl + categoryShort + ".json",   //this is the url for the menu items
+      buildAndShowMenuItemsHTML                             // lecture 62 code
     );
   };
 
@@ -132,6 +135,11 @@ $(function () {
     finalHtml += "</section>";
     return finalHtml;
   }
+
+
+  //------------------------------------------------------------------
+  // lecture 62 from here
+
 
   // Builds HTML for the single category page based on the data
   // from the server
@@ -241,3 +249,6 @@ $(function () {
 
   global.$dc = dc;
 })(window);
+
+
+//---- checked ----

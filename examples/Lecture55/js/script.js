@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded",
     document.querySelector("button")
       .addEventListener("click", sayHello);
 
-    document.querySelector("body")
+    // press shift key and move mouse inside body to see the coordinates
+    document.querySelector("body") 
       .addEventListener("mousemove",
         function (event) {
           if (event.shiftKey === true) {
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded",
   }
 );
 
+// checked
 
 
 // document.querySelector("button")

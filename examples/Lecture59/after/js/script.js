@@ -2,11 +2,15 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
   $("#navbarToggle").blur(function (event) {
+    console.log(event);
     var screenWidth = window.innerWidth;
+    console.log(screenWidth);
     if (screenWidth < 768) {
-      $("#collapsable-nav").collapse('hide');
+      $("#collapsable-nav").collapse('hide'); // hide the collapsible menu no matter wherever click on the page
     }
   });
+
+  // for other browsers
 
   // In Firefox and Safari, the click event doesn't retain the focus
   // on the clicked button. Therefore, the blur event will not fire on

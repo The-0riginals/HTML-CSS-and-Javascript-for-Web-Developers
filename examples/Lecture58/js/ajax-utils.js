@@ -35,9 +35,9 @@ ajaxUtils.sendGetRequest =
   };
 
 
-// Only calls user provided 'responseHandler'
-// function if response is ready
-// and not an error
+// Only calls user provided 'responseHandler' function 
+//if response is ready and not an error
+
 function handleResponse(request,
                         responseHandler,
                         isJsonResponse) {
@@ -49,11 +49,12 @@ function handleResponse(request,
       isJsonResponse = true;
     }
 
-    if (isJsonResponse) {
-      responseHandler(JSON.parse(request.responseText));
+    //
+    if (isJsonResponse) {   // if isJsonResponse is true
+      responseHandler(JSON.parse(request.responseText)); // convert JSON string to JS object
     }
     else {
-      responseHandler(request.responseText);
+      responseHandler(request.responseText); // return JSON string
     }
   }
 }

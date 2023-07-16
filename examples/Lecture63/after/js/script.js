@@ -56,7 +56,7 @@ $(function () {
 
   // Remove the class 'active' from home and switch to Menu button
   var switchMenuToActive = function () {
-    // Remove 'active' from home button
+    // Remove 'active' from "home" button
     var classes = document.querySelector("#navHomeButton").className;
     classes = classes.replace(new RegExp("active", "g"), "");
     document.querySelector("#navHomeButton").className = classes;
